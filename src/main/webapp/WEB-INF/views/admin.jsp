@@ -53,11 +53,17 @@
                         <td>${book.description}</td>
                         <td>${book.date}</td>
                         <td class="actions">
-                            <a class="btn btn-success btn-xs" href="${contextPath}/addbook?bookId=${book.id}">Изменить</a>
-                            <form action="?deleteBookId=${book.id}" class="form-inline" method="POST">
+                            <a class="btn btn-success btn-xs" href="/uploadfile">Изменить</a>
+                            <form action="/uploadfile" class="form-inline" method="POST" enctype="multipart/form-data">
                                 <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
                                 <button class="btn btn-danger btn-xs" type="submit">Удалить</button>
+                                        <table>
+
+                                            <tr><td>File to upload:</td><td><input type="file" name="file" /></td></tr>
+                                            <tr><td></td><td><input type="submit" value="Upload" /></td></tr>
+                                        </table>
                             </form>
+
                         </td>
                     </tr>
                 </c:forEach>
@@ -65,6 +71,7 @@
             </table>
         </div>
         </div>
+
     <div id="bottom1" class="row">
         <div class="col-md-12">
 

@@ -11,6 +11,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.util.*;
 
@@ -244,6 +246,17 @@ public class UserController {
 
         model.addAttribute("log", str.toString());
         return "testdb";
+    }
+
+    @RequestMapping(value = "/uploadfile",method = RequestMethod.POST)
+    public MultipartFile handleFileUpload(@RequestParam("file") MultipartFile file,
+                                          RedirectAttributes redirectAttributes) {
+
+       // storageService.store(file);
+        redirectAttributes.addFlashAttribute("message",
+                "You successfully uploaded " + file.getOriginalFilename() + "!");
+
+        return file;
     }
 
     @RequestMapping(value = "/personal", method = RequestMethod.GET)

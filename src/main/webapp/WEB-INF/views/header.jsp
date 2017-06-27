@@ -46,9 +46,15 @@
                 <c:if test="${pageContext.request.userPrincipal.name == 'proselyte'}">
                     <li><a href="${contextPath}/admin" style="color: white"><h4>Администрирование</h4></a></li>
                 </c:if>
-                <li><a href="${contextPath}/welcome" style="color: white"><h4>Главная</h4></a></li>
-                <li><a href="${contextPath}/personal" style="color: white"><h4>Личный кабинет</h4></a></li>
-                <li><a onclick="document.forms['logoutForm'].submit()" style="color: white"><h4>Выйти</h4></a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" style="color: white">${pageContext.request.userPrincipal.name}<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="${contextPath}/welcome"><h4>Главная</h4></a></li>
+                        <li><a href="${contextPath}/personal"><h4>Личный кабинет</h4></a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a onclick="document.forms['logoutForm'].submit()"><h4>Выйти</h4></a></li>
+                    </ul>
+                </li>
                 </c:if>
 
                 <c:if test="${pageContext.request.userPrincipal.name == null}">
@@ -59,7 +65,7 @@
                 </c:if>
 
             </ul>
-        </div>
+        </  v>
     </div>
 </nav>
 

@@ -39,8 +39,10 @@ a:active, a:hover {
     outline: 0
 }
 
+dropdown-toggle
 abbr[title] {
     border-bottom: 1px dotted
+
 }
 
 b, strong {
@@ -4623,7 +4625,7 @@ select[multiple].input-group-sm > .form-control, select[multiple].input-group-sm
 }
 
 @media (min-width: 768px) {
-    .navbar > .container .navbar-brand, .navbar > .container-fluid .navbar-brand {
+    .navbar > .container .navbar-brand, hoverar > .container-fluid .navbar-brand {
         margin-left: -15px
     }
 }

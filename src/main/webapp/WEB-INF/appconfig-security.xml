@@ -8,6 +8,7 @@
 		http://www.springframework.org/schema/security/spring-security.xsd">
 
     <http auto-config="true">
+        <csrf disabled="true"/>
         <intercept-url pattern="/"/>
         <intercept-url pattern="/welcome"/>
         <intercept-url pattern="/bookpage"/>
@@ -22,6 +23,7 @@
 
         <logout logout-success-url="/login?logout"/>
     </http>
+
 
     <authentication-manager alias="authenticationManager">
         <authentication-provider user-service-ref="userDetailsServiceImpl">
